@@ -1,0 +1,24 @@
+1.	class Solution {
+2.	    public int maxProfit(int[] prices) {
+3.	        return calculate(prices, 0);
+4.	    }
+5.	
+6.	    public int calculate(int prices[], int s) {
+7.	        if (s >= prices.length)
+8.	            return 0;
+9.	        int max = 0;
+10.	        for (int start = s; start < prices.length; start++) {
+11.	            int maxprofit = 0;
+12.	            for (int i = start + 1; i < prices.length; i++) {
+13.	                if (prices[start] < prices[i]) {
+14.	                    int profit = calculate(prices, i + 1) + prices[i] - prices[start];
+15.	                    if (profit > maxprofit)
+16.	                        maxprofit = profit;
+17.	                }
+18.	            }
+19.	            if (maxprofit > max)
+20.	                max = maxprofit;
+21.	        }
+22.	        return max;
+23.	    }
+24.	}
