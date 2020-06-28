@@ -1,0 +1,22 @@
+public void recurseAndReverse(ListNode right, int m, int n) 
+22.	   		if (n == 1) {
+23.	            	return;
+24.	 	right = right.next;  if (m > 1) {
+25.	            this.left = this.left.next;
+26.	        }  
+27.		this.recurseAndReverse(right, m - 1, n - 1);       if (this.left == right || right.next == this.left) {
+28.	            this.stop = true;    
+29.	       if (!this.stop) {
+30.	            int t = this.left.val;
+31.	            this.left.val = right.val;
+32.	            right.val = t;
+33.	           this.left = this.left.next;
+34.	        }
+35.	    }
+36.	
+37.	    public ListNode reverseBetween(ListNode head, int m, int n) {
+38.	        this.left = head;
+39.	        this.stop = false;
+40.	        this.recurseAndReverse(head, m, n);
+41.	        return head;
+42.	    }
