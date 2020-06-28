@@ -1,0 +1,11 @@
+1.	   liste = [1,2] # başlangıç terimlerini belirledik.
+2.	   toplam = 0 # sonuç da göstereceyiğimiz toplamı tanımladık.
+3.	   for i in range(2,100): # ilk 100 terime baktım. Bu aslında iyi bir çözüm sayılmaz
+4.	   fib = liste[i-2]+liste[i-1] # seçilen terim ve önceki terimi topladım.
+5.	   if fib > 4000000: #4 milyanu aşmıssak eğer döngüyü kırıyoruz.
+6.	   break
+7.	    liste.append(fib) # fibonacci sayılarımız listeye ekliyoruz.
+8.	   for i in liste:
+9.	   if i%2 ==0 :
+10.	    toplam= toplam+i # toplamı bul
+11.	    print(liste) # tüm sayıları göster.
