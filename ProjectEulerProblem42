@@ -1,0 +1,28 @@
+1.	1.public String run() {
+2.	2.int count = 0;
+3.	3.for (String word : WORDS) {
+4.	4.if (isTriangularNumber(wordValue(word)))
+5.	5.count++;
+6.		}
+7.	return Integer.toString(count);
+8.		}
+9.	private static boolean isTriangularNumber(int x) {
+10.			for (int i = 1; ; i++) {
+11.				int t = i * (i + 1) / 2;
+12.				if (t == x)
+13.					return true;
+14.				if (t > x)
+15.					return false;
+16.			}
+17.		}
+18.		
+19.		private static int wordValue(String s) {
+20.			int sum = 0;
+21.			for (int i = 0; i < s.length(); i++) {
+22.				char c = s.charAt(i);
+23.			if (c < 'A' || c > 'Z')
+24.					throw new IllegalArgumentException();
+25.				sum += c - 'A' + 1;
+26.			}
+27.			return sum;
+28.		}
